@@ -98,4 +98,14 @@ export default {
       line-height 20px
       background #fff
       border-radius 4px
+  &::after
+    position absolute
+    z-index -1
+    content ''
+    left 0
+    right 0
+    top 82%
+    bottom -10%
+    background url('~@/assets/images/home/form_bg.png') no-repeat
+    background-size 100% 90%
 </style>

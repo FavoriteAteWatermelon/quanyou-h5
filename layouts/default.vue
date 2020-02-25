@@ -4,9 +4,8 @@
       <div class="nav-title">全友全屋定制</div>
       <nav-btn></nav-btn>
     </div>
-    <div class="con">
-      <nuxt/>
-    </div>
+    <nuxt/>
+
   </div>
 </template>
 
@@ -54,4 +53,5 @@ export default {
     right 0
     left 0
     bottom 0
+    overflow hidden
 </style>
