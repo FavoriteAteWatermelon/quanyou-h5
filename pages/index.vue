@@ -1,20 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-    </div>
+  <div class="index">
+    <index-swiper></index-swiper>
+    <index-order></index-order>
   </div>
 </template>
 
-<script lang="stylus">
-import Logo from '~/components/Logo.vue'
+<script>
+import indexSwiper from '@/components/index-swiper'
+import indexOrder from '@/components/index-order'
 
 export default {
   // components: {
   //   Logo
   // }
+  components: {
+    indexSwiper,
+    indexOrder
+  }
 }
 </script>
 
-<style>
-
+<style lang="stylus" scoped>
+.container
+  width 500px
 </style>

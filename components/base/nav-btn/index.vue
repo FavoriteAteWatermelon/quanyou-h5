@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     isRotate () {
-      console.log(1)
       this.isActive ? this.isActive = false : this.isActive = true
     }
   }
