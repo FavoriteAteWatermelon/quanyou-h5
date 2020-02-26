@@ -18,6 +18,7 @@ export default {
   methods: {
     isRotate () {
       this.isActive ? this.isActive = false : this.isActive = true
+      this.$emit('toggleNav', this.isActive)
     }
   }
 }
@@ -46,7 +47,7 @@ export default {
       height 3px
       background $color-theme
       border-radius 5px
-      transition all 0.3s
+      transition all 0.5s cubic-bezier(.5,-0.21,.52,1.11)
     .line2
       position absolute
       top 12.5px
@@ -54,7 +55,7 @@ export default {
       height 3px
       background $color-theme
       border-radius 5px
-      transition all 0.3s
+      transition all 0.3s ease-in-out
     .line3
       position absolute
       top 25px
@@ -62,7 +63,7 @@ export default {
       height 3px
       background $color-theme
       border-radius 5px
-      transition all 0.3s
+      transition all 0.5s cubic-bezier(.5,-0.21,.52,1.11)
     .active1
       top 12.5px
       transform rotate(135deg)

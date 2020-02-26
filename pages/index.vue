@@ -4,11 +4,8 @@
     <div>
       <index-swiper class="index-swiper"></index-swiper>
       <index-order></index-order>
-      <h1>dfdfadf</h1>
-      <h1>dfdfadf</h1>
-      <h1>dfdfadf</h1>
-      <h1>dfdfadf</h1>
-      <h1>dfdfadf</h1>
+      <div class="mask"></div>
+      <a class="banner1" href="#"></a>
     </div>
   </scroll>
 
@@ -38,8 +35,20 @@ export default {
   right 0
   left 0
   bottom 0
+  .mask
+    height 0
+    width 100%
+    padding-bottom 16%
   .container
     width 500px
   .index-swiper
     margin-top 20px  
+  .banner1
+    display block
+    height 0
+    width 100%
+    padding-bottom 36.8%
+    background-image url("~@/assets/images/home/banner1.jpg")
+    background-repeat  no-repeat
+    background-size 100% 100%
 </style>

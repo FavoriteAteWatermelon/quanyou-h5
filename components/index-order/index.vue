@@ -11,6 +11,7 @@
        <el-input placeholder="详细地址"  class="order-address" v-model="form.address"></el-input>
        <el-button class="submit-btn" @click="submitForm('form')">马上预约</el-button>
        <div class="enjoy">享受0元设计</div>
+
       <!-- <el-form-item label="活动名称">
       </el-form-item> -->
     </el-form>
@@ -43,6 +44,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/common/stylus/variable'
 .index-order
+  position relative
   margin 50px 5% 0 5%
   border-radius 5px
   background $color-theme
@@ -102,10 +104,10 @@ export default {
     position absolute
     z-index -1
     content ''
-    left 0
-    right 0
-    top 82%
-    bottom -10%
+    left -5%
+    right -5%
+    top 60%
+    bottom -16%
     background url('~@/assets/images/home/form_bg.png') no-repeat
-    background-size 100% 90%
+    background-size 100% 96%
 </style>
