@@ -5,7 +5,7 @@
       <div class="nav-title">全友全屋定制</div>
       <nav-btn @toggleNav="toggle"></nav-btn>
     </div>
-    <nav-detail class="nav-detail" :show="show"></nav-detail>
+    <nav-detail  class="nav-detail" :show="show"></nav-detail>
   </div>
 
 </template>
