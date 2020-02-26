@@ -1,44 +1,51 @@
 <template>
-  <div class="nav-detail" :class="{'isShow' : show}">
-    <div class="nav-title">
-      首页
-    </div>
-    <ul>
-      <li class="nav-item">热销产品</li>
-      <li class="nav-item">0元设计</li>
-      <li class="nav-item">空间分类</li>
-      <li class="nav-item">全屋定制</li>
-      <li class="nav-item">预约设计师</li>
-      <li class="nav-item">家居DIY</li>
-      <li class="nav-item">门店查询</li>
-      <li class="nav-item">售后服务</li>
-      <li class="nav-item">最新资讯</li>
-      <li class="nav-item">全屋案例资讯</li>
-    </ul>
-    <div class="about-us">
-      <div class="contact" >
-        <div class="qrcode" :class="{'active-us' : show}">
-          <img src="@/assets/images/common/qrcode.jpg" alt="">
-          <a href="#">关注获取更多</a>
-        </div>
-        <div  class="tel" :class="{'active-us' : show}">
-          <div class="tel-title">统一热线:400-8800-315</div>
-          <a href="tel:86-28-66771818">86-28-66771818</a>
-          <a href="tel:86-28-66771818">86-28-66771818</a>
-          <div class="email">EAMIL:kf@quanyou.com</div>
-        </div>
+  <transition name="show-nav-item">
+    <div class="nav-detail" v-show="show">
+      <div class="nav-title">
+        首页
       </div>
-      <div class="service">
-        <div class="home">
-          <a href="">全友家居</a> 
-          </div>
-        <div class="bache">
-          <a href="">全友卫浴</a>
-        </div>
-      </div>
-    </div>
+      <ul>
+        <li class="nav-item">热销产品</li>
+        <li class="nav-item">0元设计</li>
+        <li class="nav-item">空间分类</li>
+        <li class="nav-item">全屋定制</li>
+        <li class="nav-item">预约设计师</li>
+        <li class="nav-item">家居DIY</li>
+        <li class="nav-item">门店查询</li>
+        <li class="nav-item">售后服务</li>
+        <li class="nav-item">最新资讯</li>
+        <li class="nav-item">全屋案例资讯</li>
+      </ul>
+      <div class="about-us">
+        <div class="contact" >
+          <!-- <div class="qrcode" :class="{'active-us' : show}"> -->
+          <transition name="active-qr">
+            <div class="qrcode" v-show="show" >
+              <img src="@/assets/images/common/qrcode.jpg" alt="">
+              <a href="#">关注获取更多</a>
+            </div>      
+          </transition>
+          <transition name="active-tel">
+           <div  class="tel" v-show="show" >
+            <div class="tel-title">统一热线:400-8800-315</div>
+            <a href="tel:86-28-66771818">86-28-66771818</a>
+            <a href="tel:86-28-66771818">86-28-66771818</a>
+            <div class="email">EAMIL:kf@quanyou.com</div>
+          </div>         
+          </transition>
 
-  </div>
+        </div>
+        <div class="service">
+          <div class="home">
+            <a href="">全友家居</a> 
+            </div>
+          <div class="bache">
+            <a href="">全友卫浴</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -53,19 +60,24 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.show-nav-item-enter-active, .show-nav-item-leave-active
+  opacity 1
+  transform translateY(0) 
+
+.show-nav-item-enter, .show-nav-item-leave-to
+  transform  translateY(-100%)
+  opacity 0
+
 .nav-detail
   position fixed
   top 50px
   bottom 0
   left 0
   right 0
-  transition all 10s
-  transform  translateY(-100%)
-  opacity 0
+  transition all 1s
   background #fff
-.isShow
-  opacity 1
-  transform translateY(0)
+  // opacity 1
+  // transform translateY(0)
   .nav-title
     height 50px
     width 100%
@@ -97,21 +109,31 @@ export default {
       display flex
       height 120px
       justify-content space-around
+      .active-qr-enter-active, .active-qr-leave-active
+        opacity 1
+        transform translateX(0) 
+      .active-qr-enter, .active-qr-leave-to
+        transform  translateX(-200px)
+        opacity 0
       .qrcode
-        transition all 10s
-        transform translateX(-200px)
+        flex 1
+        transition all 2s
         display flex
         flex-direction column
         justify-content space-between
+        align-items center
+      .active-tel-enter-active, .active-tel-leave-active
+        opacity 1
+        transform translateX(0) 
+      .active-tel-enter, .active-tel-leave-to
+        transform  translateX(200px)
+        opacity 0        
       .tel
-        transition all 10s
-        transform translateX(200px)
+        flex 1
+        transition all 2s
         display flex
         flex-direction column
         justify-content space-between
-      .active-us
-        transform translateX(0)
-        opacity 1   
   .service
     display flex
     justify-content space-between
