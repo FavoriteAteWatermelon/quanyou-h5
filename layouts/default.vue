@@ -1,15 +1,18 @@
 <template>
   <div class="layout">
     <nav-header></nav-header>
+    <online></online>
     <nuxt/>
   </div>
 </template>
 
 <script>
 import navHeader from '@/components/nav-header'
+import online from '@/components/online'
 export default {
   components:{
-    navHeader
+    navHeader,
+    online
   }
   
 }

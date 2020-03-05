@@ -134,6 +134,8 @@ export default {
         display flex
         flex-direction column
         justify-content space-between
+        div,a
+          text-align center
   .service
     display flex
     justify-content space-between
