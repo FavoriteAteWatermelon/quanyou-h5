@@ -1,6 +1,6 @@
 <template>
     <div v-if="showDots" class="dots" :class="[isTransition ? 'isTransition' : '']" >
-      <span :class="{active: currentPageIndex === index}" class="dot" v-for="(item,index) in dots" :key="item"></span>
+      <span :style="{background: dotBackgroundColor ? '#fffff' : '#f2f2f2' }"  :class="{active: currentPageIndex === index}" class="dot" v-for="(item,index) in dots" :key="item"></span>
     </div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
     currentPageIndex: {
       type: Number,
       default: 0
+    },
+    dotBackgroundColor: {
+      type: Boolean,
+      default: true
     },
     showDots: {
       type: Boolean,
@@ -46,7 +50,7 @@ export default {
       border-radius: 50%
       background: #fff
       &.active
-        background: $color-theme
+        background: $color-theme!important
   .isTransition
     .dot
       transition all 0.4s

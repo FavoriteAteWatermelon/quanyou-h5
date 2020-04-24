@@ -13,3 +13,6 @@ client:主入口在.nuxt/index.js
 
 3. template引入背景图片的方式是 :style="{backgroundImage:'url('+require('@/assets/images/home/swiper1.jpg')+')'}"
 
+### 轮播方式放弃了vue-awesome-swiper 改用better-scroll轮子造了一个
+
+
